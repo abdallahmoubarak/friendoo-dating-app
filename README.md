@@ -1,7 +1,9 @@
 # Friendoo a dating application
+
 ⭐ Laravel, MySQL, and vanilla JavaScript application
 
 You are asked to implement a dating website using Vanilla HTML, CSS, JS, and Laravel.
+
 - On Signup, users choose their gender and which gender they are interested in. They also specify their location (Bonus: Get programarically the location of the user)
 - Users can only surf people who are interested in.
 - After logging in, users are displayed and sorted by their location.
@@ -11,8 +13,6 @@ You are asked to implement a dating website using Vanilla HTML, CSS, JS, and Lar
 - Users shall be able to chat with one another
 
 📅 Deadline: Tuesday, October 4th, at 11:59 PM
-
-
 
 ---
 
@@ -24,29 +24,27 @@ You are asked to implement a dating website using Vanilla HTML, CSS, JS, and Lar
 
 <img align="center" src="https://github-readme-stats.vercel.app/api?username=abdallahmoubarak&show_icons=true&locale=en" alt="" />
 
-
 ## 🎯 Project Process
 
 #### Stage 1: creating ER diagram for the project
 
-
-
 ---
-
 
 #### Stage 2: Creating Figma design
 
-##### Wireframe:
+##### Components:
 
+![](./src/components.png)
 
 ##### Mockup:
 
+![](./src/blue-mock.png)
+
+![](./src/pink-mock.png)
 
 ---
 
 #### Stage 3: Creating List of API's needed for the project
-
-
 
 ---
 
@@ -68,8 +66,6 @@ repo link : https://github.com/abdallahmoubarak/friendoo-dating-app
 - Substage 4 : fetching api and fitting them in frontend
 
 ###### repo graph
-
-
 
 ---
 
