@@ -24,9 +24,13 @@ You are asked to implement a dating website using Vanilla HTML, CSS, JS, and Lar
 
 <img align="center" src="https://github-readme-stats.vercel.app/api?username=abdallahmoubarak&show_icons=true&locale=en" alt="" />
 
+---
+
 ## 🎯 Project Process
 
 #### Stage 1: creating ER diagram for the project
+
+![](./src/er-diagram.png)
 
 ---
 
@@ -55,8 +59,8 @@ repo link : https://github.com/abdallahmoubarak/friendoo-dating-app
 <p align='center'>
 <img src='./src/html.svg' width='50' alt=''>
 <img src='./src/css.svg' width='50' alt=''>
-<img src='./src/javascript.svg' width='50' alt=''>
-<img src='./src/php.svg' height='50' alt=''>
+<img src='./src/javascript.svg' height='50' alt=''>
+<img src='./src/laravel.svg' height='55' alt=''>
 <img src='./src/mysql.svg' height='50' alt=''>
 </p>
 
