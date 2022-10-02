@@ -179,9 +179,9 @@ body {
   -o-transition: all 0.3s ease-out;
 }
 
-/* --------------- top-nav --------------- */
+/* --------------- top-bar --------------- */
 
-.top-nav {
+.top-bar {
   color: white;
   font-size: 2.6rem;
   padding: 0.6rem 2rem;
@@ -191,6 +191,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 
 .profile-img {
@@ -198,6 +199,45 @@ body {
   height: 4rem;
   border-radius: 50%;
   background-color: white;
+  min-width: 4rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.menu-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-color: transparent;
+}
+.profile-menu {
+  position: absolute;
+  right: 2rem;
+  top: 3rem;
+  background: white;
+  border: 1px solid #54549f;
+  border-radius: 0.2rem;
+  -webkit-border-radius: 0.2rem;
+  -moz-border-radius: 0.2rem;
+  -ms-border-radius: 0.2rem;
+  -o-border-radius: 0.2rem;
+}
+.profile-menu-option {
+  cursor: pointer;
+  padding: 0.6rem 2rem;
+  border-radius: 0.2rem;
+  -webkit-border-radius: 0.2rem;
+  -moz-border-radius: 0.2rem;
+  -ms-border-radius: 0.2rem;
+  -o-border-radius: 0.2rem;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+.profile-menu-option:hover {
+  background: #eee;
 }
 
 /* --------------- app-body --------------- */
