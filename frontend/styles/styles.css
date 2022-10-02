@@ -9,6 +9,7 @@
   outline: none;
   -webkit-tap-highlight-color: transparent;
   font-family: Nunito, sans-serif;
+  font-weight: bold;
   -ms-scroll-chaining: none;
   overscroll-behavior: contain;
   -ms-overflow-style: none;
@@ -21,4 +22,83 @@
 img {
   max-width: 100%;
   width: 100%;
+}
+
+:root {
+  --pink: #ff1a7a;
+}
+
+/* --------------- nav --------------- */
+
+.nav-container {
+  background-color: var(--pink);
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.nav-ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+.nav-ul li {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+  justify-content: center;
+  padding: 1rem;
+}
+.nav-icon {
+  width: 3rem;
+  height: 3rem;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+.nav-ul li.active .nav-icon {
+  transform: translateY(-2rem);
+  -webkit-transform: translateY(-2rem);
+  -moz-transform: translateY(-2rem);
+  -ms-transform: translateY(-2rem);
+  -o-transform: translateY(-2rem);
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  z-index: 4;
+}
+.nav-ul li.active .nav-text {
+  opacity: 1;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+.nav-text {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(1rem);
+  -webkit-transform: translateY(1rem);
+  -moz-transform: translateY(1rem);
+  -ms-transform: translateY(1rem);
+  -o-transform: translateY(1rem);
+}
+
+.circule {
+  position: absolute;
+  top: -50%;
+  width: 5rem;
+  height: 5rem;
+  background: var(--pink);
+  border-radius: 50%;
+  border: 6px solid white;
 }
