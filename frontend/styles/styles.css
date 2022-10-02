@@ -423,3 +423,69 @@ label {
   height: 12rem;
   margin: auto;
 }
+
+/* ---------------- user card -------------------- */
+
+.user-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 20rem;
+  box-shadow: 0px 0px 10px gray;
+  border-radius: 0.6rem;
+  -webkit-border-radius: 0.6rem;
+  -moz-border-radius: 0.6rem;
+  -ms-border-radius: 0.6rem;
+  -o-border-radius: 0.6rem;
+}
+
+.card-img {
+  flex: 1 1;
+  overflow: hidden;
+  border-radius: 0.6rem;
+  -webkit-border-radius: 0.6rem;
+  -moz-border-radius: 0.6rem;
+  -ms-border-radius: 0.6rem;
+  -o-border-radius: 0.6rem;
+}
+
+.card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 2rem;
+}
+
+.card-like {
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+.card-like:hover {
+  transform: translateY(-0.2rem);
+  -webkit-transform: translateY(-0.2rem);
+  -moz-transform: translateY(-0.2rem);
+  -ms-transform: translateY(-0.2rem);
+  -o-transform: translateY(-0.2rem);
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+.green {
+  color: green;
+}
