@@ -1,4 +1,4 @@
-const userCard = (id, name, img, status) => {
+const userCard = (id, name, img, status, favorite) => {
   return `
     <div class='user-card'>
         <div class='card-img' id="card-${id}">
@@ -11,7 +11,11 @@ const userCard = (id, name, img, status) => {
                 <div>Distance: 3.2km</div>
             </div>
             <div class='card-like' id='${id}'>
-                <img src='./assets/unactive-heart-icon.svg' alt='' />
+                <img src='${
+                  favorite
+                    ? "./assets/active-heart-icon.svg"
+                    : "./assets/unactive-heart-icon.svg"
+                }' alt='' />
             </div>
         </div>
     </div>`;
