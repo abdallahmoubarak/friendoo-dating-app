@@ -151,5 +151,9 @@ passwordInput.addEventListener("input", () => {
 
 // sign process: clicking button
 signBtn.onclick = () => {
-  window.location.href = "./index.html";
+  if (signType == "signup") {
+    window.location.replace("./index.html");
+  } else if (signType == "signin") {
+    window.location.replace("./index.html");
+  }
 };
