@@ -2,19 +2,19 @@ const navBar = () => {
   return `
     <div class="nav-container">
       <ul class="nav-ul">
-        <li class="nav-li active">
+        <li class="nav-li" id='favorite'>
           <div class="nav-icon">
             <img src="./assets/white-heart-icon.svg" />
           </div>
           <span class="nav-text">Favorites</span>
         </li>
-        <li class="nav-li">
-          <div class="nav-icon">
+        <li class="nav-li  active" id='users'>
+          <div class="nav-icon" >
             <img src="./assets/white-user-icon.svg" />
           </div>
           <span class="nav-text">Users</span>
         </li>
-        <li class="nav-li">
+        <li class="nav-li" id='contact'>
           <div class="nav-icon">
             <img src="./assets/white-chat-icon.svg" />
           </div>
@@ -35,3 +35,21 @@ list.forEach((item) => {
     item.classList.add("active");
   });
 });
+
+// switching between pages
+
+const favoriteBtn = document.getElementById("favorite");
+const usersBtn = document.getElementById("users");
+const contactBtn = document.getElementById("contact");
+
+favoriteBtn.onclick = () => {
+  document.getElementById("app-body").innerHTML = favoritePage();
+};
+
+usersBtn.onclick = () => {
+  document.getElementById("app-body").innerHTML = usersPage();
+};
+
+contactBtn.onclick = () => {
+  document.getElementById("app-body").innerHTML = contactPage();
+};
