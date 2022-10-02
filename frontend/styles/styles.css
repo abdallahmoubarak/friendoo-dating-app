@@ -25,13 +25,17 @@ img {
 }
 
 :root {
-  --pink: #ff1a7a;
+  --primary-color: #ff1a7a;
+}
+
+body {
+  background-color: var(--primary-color);
 }
 
 /* --------------- nav --------------- */
 
 .nav-container {
-  background-color: var(--pink);
+  background-color: var(--primary-color);
   color: white;
   position: fixed;
   bottom: 0;
@@ -99,7 +103,7 @@ img {
   top: -50%;
   width: 5rem;
   height: 5rem;
-  background: var(--pink);
+  background: var(--primary-color);
   border-radius: 50%;
   border: 5px solid white;
   left: 0;
@@ -164,4 +168,33 @@ img {
   -moz-transition: all 0.3s ease-out;
   -ms-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
+}
+
+/* --------------- top-nav --------------- */
+
+.top-nav {
+  color: white;
+  font-size: 2.6rem;
+  padding: 0.6rem 2rem;
+  position: sticky;
+  top: 0;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile-img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: white;
+}
+
+/* --------------- app-body --------------- */
+
+.app-body {
+  background-color: #fff;
+  height: 200vh;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
 }
