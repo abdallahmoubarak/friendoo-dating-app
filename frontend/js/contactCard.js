@@ -1,6 +1,6 @@
 const contactCard = (id, name, img, status) => {
   return `
-      <div class='contact-card' id='${id}'>
+      <div class='contact-card' id='card-${id}'>
           <div class='contact-img'>
               <img src=${img} alt=""/>
           </div>

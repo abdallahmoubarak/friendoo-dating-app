@@ -5,7 +5,6 @@ const users = [
     img: "./assets/mock-img-1.png",
     status: "online",
     interested_in: "Male",
-    favorite: true,
     age: 20,
     bio: "This is me Suzi, I am looking for a partner in my life",
   },
@@ -16,6 +15,7 @@ const users = [
     status: "offline",
     interested_in: "Male",
     age: 25,
+    favorite: true,
     bio: "My name is Nancy, I love hiking if you which to be my partner",
   },
 ];

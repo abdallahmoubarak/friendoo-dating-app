@@ -61,4 +61,5 @@ contactBtn.onclick = () => {
   document.getElementById("app-body").innerHTML = contactPage();
   document.getElementById("circule").classList.remove("display-none");
   document.getElementById("circule-back").classList.remove("display-none");
+  loopOverContacts();
 };
