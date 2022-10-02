@@ -1,9 +1,11 @@
 const regularExpression =
   /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-const validateSign = (type, name, mail, password) => {
+
+// sign validation function
+const validateSign = (signType, name, mail, password) => {
   valid = true;
   if (
-    type == "signup" &&
+    signType == "signup" &&
     (name.length < 5 ||
       !(
         mail.includes("@") &
@@ -14,7 +16,7 @@ const validateSign = (type, name, mail, password) => {
   ) {
     valid = false;
   } else if (
-    (type == "signin" &&
+    (signType == "signin" &&
       !(
         mail.includes("@") &
         (mail.indexOf("@") > 2) &
@@ -22,6 +24,7 @@ const validateSign = (type, name, mail, password) => {
       )) ||
     !regularExpression.test(password)
   ) {
+    valid = false;
   }
   return valid;
 };

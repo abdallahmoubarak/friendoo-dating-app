@@ -1,6 +1,6 @@
 const input = (id, name) => {
   return `
-    <div class="input-container">
+    <div class="input-container" id="${id}-container">
         <input
             class="sign-input"
               autocomplete="off"

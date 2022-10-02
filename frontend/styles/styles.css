@@ -354,3 +354,8 @@ label {
   text-align: right;
   width: 100%;
 }
+
+/* --------------- controller ---------------- */
+.display-none {
+  display: none;
+}
