@@ -5,12 +5,8 @@ const input = (id, name) => {
             class="sign-input"
               autocomplete="off"
               id="${id}"
+              type=${id == "password" ? "password" : "text"}
               placeholder="${name}" />
         <label for="${id}">${name}</label>
     </div>`;
 };
-
-document.getElementById("input-section-container").innerHTML +=
-  input("name", "Full Name") +
-  input("username", "User Name") +
-  input("email", "Email");
