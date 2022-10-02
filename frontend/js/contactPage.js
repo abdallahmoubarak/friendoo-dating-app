@@ -1,3 +1,3 @@
 const contactPage = () => {
-  return `<div>contact</div>`;
+  return `<div></div>` + contactCardsContainer(users);
 };
