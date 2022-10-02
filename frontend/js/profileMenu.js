@@ -17,4 +17,8 @@ profileMenu.onclick = () => {
   menuBackground.classList.add("display-none");
   profileMenu.classList.add("display-none");
   document.getElementById("app-body").innerHTML = profilePage();
+
+  list.forEach((item) => item.classList.remove("active"));
+  document.getElementById("circule").classList.add("display-none");
+  document.getElementById("circule-back").classList.add("display-none");
 };

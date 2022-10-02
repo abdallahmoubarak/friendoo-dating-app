@@ -44,7 +44,7 @@ body {
   width: 100%;
   max-width: 100%;
 }
-.nav-container::after {
+.circule-back {
   content: "";
   position: absolute;
   top: -2rem;

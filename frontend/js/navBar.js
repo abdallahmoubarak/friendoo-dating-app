@@ -20,7 +20,8 @@ const navBar = () => {
           </div>
           <span class="nav-text">Chats</span>
         </li>
-        <div class="circule"></div>
+        <div class="circule-back" id='circule-back'></div>
+        <div class="circule" id='circule'></div>
       </ul>
     </div>`;
 };
@@ -44,12 +45,18 @@ const contactBtn = document.getElementById("contact");
 
 favoriteBtn.onclick = () => {
   document.getElementById("app-body").innerHTML = favoritePage();
+  document.getElementById("circule").classList.remove("display-none");
+  document.getElementById("circule-back").classList.remove("display-none");
 };
 
 usersBtn.onclick = () => {
   document.getElementById("app-body").innerHTML = usersPage();
+  document.getElementById("circule").classList.remove("display-none");
+  document.getElementById("circule-back").classList.remove("display-none");
 };
 
 contactBtn.onclick = () => {
   document.getElementById("app-body").innerHTML = contactPage();
+  document.getElementById("circule").classList.remove("display-none");
+  document.getElementById("circule-back").classList.remove("display-none");
 };
