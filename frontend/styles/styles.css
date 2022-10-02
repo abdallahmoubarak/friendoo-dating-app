@@ -108,11 +108,11 @@ body {
 .nav-text {
   position: absolute;
   opacity: 0;
-  transform: translateY(1rem);
-  -webkit-transform: translateY(1rem);
-  -moz-transform: translateY(1rem);
-  -ms-transform: translateY(1rem);
-  -o-transform: translateY(1rem);
+  transform: translateY(1.2rem);
+  -webkit-transform: translateY(1.2rem);
+  -moz-transform: translateY(1.2rem);
+  -ms-transform: translateY(1.2rem);
+  -o-transform: translateY(1.2rem);
 }
 
 .circule {
@@ -230,7 +230,7 @@ body {
   right: 2rem;
   top: 3rem;
   background: white;
-  border: 1px solid #54549f;
+  border: 1px solid var(--primary-color);
   border-radius: 0.2rem;
   -webkit-border-radius: 0.2rem;
   -moz-border-radius: 0.2rem;
@@ -568,4 +568,27 @@ label {
   justify-content: space-between;
   width: 100%;
   padding: 0rem 1rem;
+}
+
+/* --------------------- Search Input --------------------- */
+
+.search-input-container {
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+.search-input {
+  border: none;
+  box-shadow: 0px 0px 5px gray;
+  padding: 0.6rem 0.8rem;
+  font-size: 1.2rem;
+  max-width: 36rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+  display: block;
+  margin: auto;
 }
