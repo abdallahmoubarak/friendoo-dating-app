@@ -5,8 +5,11 @@ const profilePage = () => {
         <img src='./assets/admin.png' alt=""/>
     </div><div class='input-section-container padding-top-bottom'>` +
     input("name", "Full Name") +
+    select("status", "Status", ["Online", "Offline", "Incognito"]) +
+    select("interested", "Interested", ["Male", "Female", "Both"]) +
     input("email", "Email") +
     input("password", "Password") +
+    select("gender", "Gender", ["Male", "Female"]) +
     "</div><button class='sign-btn'>Save</button></div>"
   );
 };
