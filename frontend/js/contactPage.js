@@ -1,3 +1,3 @@
 const contactPage = () => {
-  return `<div></div>` + contactCardsContainer(users);
+  return searchInput() + contactCardsContainer(users);
 };

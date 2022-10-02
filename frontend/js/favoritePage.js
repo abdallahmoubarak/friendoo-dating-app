@@ -1,3 +1,5 @@
 const favoritePage = () => {
-  return `<div>favorite</div>`;
+  return (
+    searchInput() + userCardsContainer(users.filter((user) => user.favorite))
+  );
 };

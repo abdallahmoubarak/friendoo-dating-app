@@ -1,3 +1,3 @@
 const usersPage = () => {
-  return `<div></div>` + userCardsContainer(users);
+  return searchInput() + userCardsContainer(users);
 };
