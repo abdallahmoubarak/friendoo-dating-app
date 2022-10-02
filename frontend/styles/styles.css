@@ -194,7 +194,20 @@ body {
 
 .app-body {
   background-color: #fff;
-  height: 200vh;
+  min-height: 100vh;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
+}
+
+/* --------------- sign page --------------- */
+
+.wink {
+  max-width: 18rem;
+  height: 16rem;
+  margin: auto;
+}
+.logo {
+  text-align: center;
+  font-size: 2.6rem;
+  color: var(--primary-color);
 }
