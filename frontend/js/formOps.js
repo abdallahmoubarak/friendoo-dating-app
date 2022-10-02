@@ -4,6 +4,6 @@ const formOps = () => {
           <div class="switch-sign" id="switch-sign">
             I already have an account
           </div>
-      <button class="sign-btn" id="sign-btn">Next</button>
+      <button class="sign-btn" id="sign-btn">Sign Up</button>
       `;
 };

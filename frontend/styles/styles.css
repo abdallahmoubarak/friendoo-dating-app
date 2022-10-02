@@ -209,6 +209,13 @@ body {
   border-top-right-radius: 2rem;
 }
 
+.sign-app-body {
+  background-color: #fff;
+  min-height: 70vh;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
 /* --------------- sign page --------------- */
 
 .wink {
