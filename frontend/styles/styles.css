@@ -260,6 +260,7 @@ body {
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
   padding: 2rem 1rem;
+  padding-bottom: 10rem;
 }
 
 .sign-app-body {
@@ -425,6 +426,14 @@ label {
 }
 
 /* ---------------- user card -------------------- */
+
+.user-cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
 
 .user-card {
   display: flex;
