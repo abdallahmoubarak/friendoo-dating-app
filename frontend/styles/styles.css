@@ -48,10 +48,10 @@ body {
 .circule-back {
   content: "";
   position: absolute;
-  top: -2rem;
+  top: -1.2rem;
   left: 0;
   width: 100%;
-  height: 2rem;
+  height: 1.2rem;
   background-color: white;
   z-index: 0;
 }
@@ -63,7 +63,7 @@ body {
   position: relative;
 }
 
-.nav-ul li {
+.nav-li {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -74,8 +74,8 @@ body {
 }
 
 .nav-icon {
-  width: 2.6rem;
-  height: 2.6rem;
+  width: 2.2rem;
+  height: 2.2rem;
   transition: all 0.3s ease-out;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -109,18 +109,18 @@ body {
 .nav-text {
   position: absolute;
   opacity: 0;
-  transform: translateY(1.2rem);
-  -webkit-transform: translateY(1.2rem);
-  -moz-transform: translateY(1.2rem);
-  -ms-transform: translateY(1.2rem);
-  -o-transform: translateY(1.2rem);
+  transform: translateY(0.8rem);
+  -webkit-transform: translateY(0.8rem);
+  -moz-transform: translateY(0.8rem);
+  -ms-transform: translateY(0.8rem);
+  -o-transform: translateY(0.8rem);
 }
 
 .circule {
   position: absolute;
   top: -50%;
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   background: var(--primary-color);
   border-radius: 50%;
   border: 5px solid white;
@@ -131,8 +131,8 @@ body {
 .circule::before {
   content: "";
   position: absolute;
-  top: 46%;
-  left: -1.8rem;
+  top: 50%;
+  left: -1.7rem;
   width: 1.8rem;
   height: 1.8rem;
   background: transparent;
@@ -143,8 +143,8 @@ body {
 .circule::after {
   content: "";
   position: absolute;
-  top: 46%;
-  right: -1.8rem;
+  top: 50%;
+  right: -1.7rem;
   width: 1.8rem;
   height: 1.8rem;
   background: transparent;
@@ -153,11 +153,11 @@ body {
 }
 
 .nav-ul li:nth-child(1).active ~ .circule {
-  transform: translateX(calc(25vw - 3.6rem));
-  -webkit-transform: translateX(calc(25vw - 3.6rem));
-  -moz-transform: translateX(calc(25vw - 3.6rem));
-  -ms-transform: translateX(calc(25vw - 3.6rem));
-  -o-transform: translateX(calc(25vw - 3.6rem));
+  transform: translateX(calc(25vw - 3.05rem));
+  -webkit-transform: translateX(calc(25vw - 3.05rem));
+  -moz-transform: translateX(calc(25vw - 3.05rem));
+  -ms-transform: translateX(calc(25vw - 3.05rem));
+  -o-transform: translateX(calc(25vw - 3.05rem));
   transition: all 0.3s ease-out;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -166,11 +166,11 @@ body {
 }
 
 .nav-ul li:nth-child(2).active ~ .circule {
-  transform: translateX(calc(50vw - 2.5rem));
-  -webkit-transform: translateX(calc(50vw - 2.5rem));
-  -moz-transform: translateX(calc(50vw - 2.5rem));
-  -ms-transform: translateX(calc(50vw - 2.5rem));
-  -o-transform: translateX(calc(50vw - 2.5rem));
+  transform: translateX(calc(50vw - 2rem));
+  -webkit-transform: translateX(calc(50vw - 2rem));
+  -moz-transform: translateX(calc(50vw - 2rem));
+  -ms-transform: translateX(calc(50vw - 2rem));
+  -o-transform: translateX(calc(50vw - 2rem));
   transition: all 0.3s ease-out;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -179,11 +179,11 @@ body {
 }
 
 .nav-ul li:nth-child(3).active ~ .circule {
-  transform: translateX(calc(75vw - 1.4rem));
-  -webkit-transform: translateX(calc(75vw - 1.4rem));
-  -moz-transform: translateX(calc(75vw - 1.4rem));
-  -ms-transform: translateX(calc(75vw - 1.4rem));
-  -o-transform: translateX(calc(75vw - 1.4rem));
+  transform: translateX(calc(75vw - 1rem));
+  -webkit-transform: translateX(calc(75vw - 1rem));
+  -moz-transform: translateX(calc(75vw - 1rem));
+  -ms-transform: translateX(calc(75vw - 1rem));
+  -o-transform: translateX(calc(75vw - 1rem));
   transition: all 0.3s ease-out;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -195,7 +195,7 @@ body {
 
 .top-bar {
   color: white;
-  font-size: 2.6rem;
+  font-size: 2.4rem;
   padding: 0.6rem 2rem;
   position: sticky;
   top: 0;
@@ -208,11 +208,11 @@ body {
 }
 
 .profile-img {
-  width: 4rem;
-  height: 4rem;
+  width: 3.6rem;
+  height: 3.6rem;
   border-radius: 50%;
   background-color: white;
-  min-width: 4rem;
+  min-width: 3.6rem;
   overflow: hidden;
   cursor: pointer;
 }
@@ -247,7 +247,7 @@ body {
   -moz-border-radius: 0.2rem;
   -ms-border-radius: 0.2rem;
   -o-border-radius: 0.2rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--primary-color);
 }
 .profile-menu-option:hover {
@@ -282,7 +282,7 @@ body {
 
 .logo {
   text-align: center;
-  font-size: 2.6rem;
+  font-size: 2.4rem;
   color: var(--primary-color);
 }
 
@@ -308,7 +308,7 @@ body {
 .sign-btn {
   color: var(--primary-color);
   background-color: white;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   padding: 0.6rem 4rem;
   border-radius: 0.6rem;
   -webkit-border-radius: 0.6rem;
@@ -351,12 +351,12 @@ body {
 
 .sign-input {
   width: 100%;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   padding-left: 1rem;
   padding-top: 1.6rem;
   padding-bottom: 0.4rem;
   border: none;
-  border: 2px solid gray;
+  border: 1px solid gray;
   border-radius: 0.4rem;
   -webkit-border-radius: 0.4rem;
   -moz-border-radius: 0.4rem;
@@ -442,7 +442,7 @@ label {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 25rem;
+  max-width: 20rem;
   box-shadow: 0px 0px 10px gray;
   border-radius: 0.6rem;
   -webkit-border-radius: 0.6rem;
@@ -485,7 +485,7 @@ label {
 }
 
 .card-title {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 
 .card-like {
@@ -538,6 +538,7 @@ label {
   align-items: center;
   flex: 1 1 30rem;
   padding: 0.6rem 1rem;
+  gap: 1rem;
   box-shadow: 0px 0px 10px gray;
   border-radius: 0.6rem;
   -webkit-border-radius: 0.6rem;
@@ -575,7 +576,6 @@ label {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0rem 1rem;
 }
 
 /* --------------------- Search Input --------------------- */
@@ -589,7 +589,7 @@ label {
   border: none;
   box-shadow: 0px 0px 5px gray;
   padding: 0.6rem 0.8rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   max-width: 36rem;
   width: 100%;
   border-radius: 0.5rem;
@@ -608,7 +608,7 @@ label {
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem 4rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .user-profile-picture {
@@ -623,4 +623,7 @@ label {
 
 .secondary-color {
   color: var(--secondary-color);
+}
+.user-profile-info {
+  flex: 1 1 10rem;
 }

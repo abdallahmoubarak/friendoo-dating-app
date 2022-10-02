@@ -4,7 +4,7 @@ const userProfilePage = (user) => {
       <div class='user-profile-picture'>
         <img src='${user.img}' alt=''/>
       </div>
-      <div>
+      <div class='user-profile-info'>
         <div class='card-title'>
           ${user.name}
         </div>
