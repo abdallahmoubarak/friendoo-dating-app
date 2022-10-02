@@ -36,11 +36,12 @@ img {
   position: fixed;
   bottom: 0;
   width: 100%;
+  max-width: 100%;
 }
 .nav-ul {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   position: relative;
 }
 
@@ -54,8 +55,8 @@ img {
   padding: 1rem;
 }
 .nav-icon {
-  width: 3rem;
-  height: 3rem;
+  width: 2.6rem;
+  height: 2.6rem;
   transition: all 0.3s ease-out;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -100,5 +101,67 @@ img {
   height: 5rem;
   background: var(--pink);
   border-radius: 50%;
-  border: 6px solid white;
+  border: 5px solid white;
+  left: 0;
+}
+
+.circule::before {
+  content: "";
+  position: absolute;
+  top: 46%;
+  left: -1.8rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  background: transparent;
+  border-top-right-radius: 4rem;
+  box-shadow: 0px -15px 0 white;
+}
+.circule::after {
+  content: "";
+  position: absolute;
+  top: 46%;
+  right: -1.8rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  background: transparent;
+  border-top-left-radius: 4rem;
+  box-shadow: 0px -15px 0 white;
+}
+
+.nav-ul li:nth-child(1).active ~ .circule {
+  transform: translateX(calc(25vw - 3.6rem));
+  -webkit-transform: translateX(calc(25vw - 3.6rem));
+  -moz-transform: translateX(calc(25vw - 3.6rem));
+  -ms-transform: translateX(calc(25vw - 3.6rem));
+  -o-transform: translateX(calc(25vw - 3.6rem));
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+.nav-ul li:nth-child(2).active ~ .circule {
+  transform: translateX(calc(50vw - 2.5rem));
+  -webkit-transform: translateX(calc(50vw - 2.5rem));
+  -moz-transform: translateX(calc(50vw - 2.5rem));
+  -ms-transform: translateX(calc(50vw - 2.5rem));
+  -o-transform: translateX(calc(50vw - 2.5rem));
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+.nav-ul li:nth-child(3).active ~ .circule {
+  transform: translateX(calc(75vw - 1.4rem));
+  -webkit-transform: translateX(calc(75vw - 1.4rem));
+  -moz-transform: translateX(calc(75vw - 1.4rem));
+  -ms-transform: translateX(calc(75vw - 1.4rem));
+  -o-transform: translateX(calc(75vw - 1.4rem));
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
 }
