@@ -257,7 +257,7 @@ body {
 
 .app-body {
   background-color: #fff;
-  min-height: 100vh;
+  min-height: 90vh;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
   padding: 2rem 1rem;
@@ -499,11 +499,11 @@ label {
 }
 
 .card-like:hover {
-  transform: translateY(-0.2rem);
-  -webkit-transform: translateY(-0.2rem);
-  -moz-transform: translateY(-0.2rem);
-  -ms-transform: translateY(-0.2rem);
-  -o-transform: translateY(-0.2rem);
+  transform: translateY(-0.3rem);
+  -webkit-transform: translateY(-0.3rem);
+  -moz-transform: translateY(-0.3rem);
+  -ms-transform: translateY(-0.3rem);
+  -o-transform: translateY(-0.3rem);
   transition: all 0.3s ease-out;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -513,6 +513,10 @@ label {
 
 .green {
   color: green;
+}
+
+.gray {
+  color: gray;
 }
 
 /* --------------- contact card ---------------- */
@@ -525,6 +529,7 @@ label {
   max-width: 30rem;
   margin: auto;
   gap: 1rem;
+  cursor: pointer;
 }
 
 .contact-card {
@@ -593,4 +598,16 @@ label {
   -o-border-radius: 0.5rem;
   display: block;
   margin: auto;
+}
+
+/* ------------------ user profile page --------------------- */
+
+.user-profile-picture {
+  width: 20rem;
+  overflow: hidden;
+  border-radius: 0.6rem;
+  -webkit-border-radius: 0.6rem;
+  -moz-border-radius: 0.6rem;
+  -ms-border-radius: 0.6rem;
+  -o-border-radius: 0.6rem;
 }

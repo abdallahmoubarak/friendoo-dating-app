@@ -7,7 +7,11 @@ const contactCard = (id, name, img, status) => {
           <div class='contact-body'>
               <div class='card-text'>
                   <div class='card-title'>${name}</div>
-                  <div>Status: <span class='green'>${status}</span></div>
+                  <div>
+                    Status: <span class='${
+                      status == "online" ? "green" : "gray"
+                    }'>${status}</span>
+                  </div>
                   <div>Distance: 3.2km</div>
               </div>
               <div>
