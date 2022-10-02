@@ -53,6 +53,7 @@ usersBtn.onclick = () => {
   document.getElementById("app-body").innerHTML = usersPage();
   document.getElementById("circule").classList.remove("display-none");
   document.getElementById("circule-back").classList.remove("display-none");
+  loopOverImgs();
 };
 
 contactBtn.onclick = () => {

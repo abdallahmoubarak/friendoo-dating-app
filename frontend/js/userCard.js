@@ -1,7 +1,7 @@
 const userCard = (id, name, img, status) => {
   return `
     <div class='user-card'>
-        <div class='card-img'>
+        <div class='card-img' id="card-${id}">
             <img src=${img} alt=""/>
         </div>
         <div class='card-body'>
