@@ -47,6 +47,7 @@ favoriteBtn.onclick = () => {
   document.getElementById("app-body").innerHTML = favoritePage();
   document.getElementById("circule").classList.remove("display-none");
   document.getElementById("circule-back").classList.remove("display-none");
+  loopOverImgs();
 };
 
 usersBtn.onclick = () => {

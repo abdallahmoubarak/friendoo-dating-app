@@ -28,6 +28,7 @@ img {
 :root {
   /* --primary-color: #ff1a7a; */
   --primary-color: #80d9ff;
+  --secondary-color: #9252f0;
 }
 
 body {
@@ -602,6 +603,14 @@ label {
 
 /* ------------------ user profile page --------------------- */
 
+.user-profile-page {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem 4rem;
+  font-size: 1.2rem;
+}
+
 .user-profile-picture {
   width: 20rem;
   overflow: hidden;
@@ -610,4 +619,8 @@ label {
   -moz-border-radius: 0.6rem;
   -ms-border-radius: 0.6rem;
   -o-border-radius: 0.6rem;
+}
+
+.secondary-color {
+  color: var(--secondary-color);
 }
