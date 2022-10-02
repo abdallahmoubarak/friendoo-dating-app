@@ -1,3 +1,3 @@
 const usersPage = () => {
-  return `<div>users</div>`;
+  return `<div>users</div>` + userCard();
 };
