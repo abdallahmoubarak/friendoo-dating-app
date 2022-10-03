@@ -52,7 +52,7 @@ You are asked to implement a dating website using Vanilla HTML, CSS, JS, and Lar
 
 ---
 
-#### Stage 4: Creating four branches for the project
+#### Stage 4: Creating main branch, and master bransh for the project
 
 repo link : https://github.com/abdallahmoubarak/friendoo-dating-app
 
@@ -66,8 +66,8 @@ repo link : https://github.com/abdallahmoubarak/friendoo-dating-app
 
 - Substage 1 : developing frontend pages using (html - css- js)
 - Substage 2 : implementing Laravel
-- Substage 3 : developing api's using
-- Substage 4 : fetching api and fitting them in frontend
+- Substage 3 : listing APIs
+- Substage 4 : fitting API's in frontend
 
 ###### repo graph
 
