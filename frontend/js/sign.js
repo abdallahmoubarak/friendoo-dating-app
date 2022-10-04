@@ -42,7 +42,7 @@ switchSign.onclick = () => {
 
 // sign process: validating sign
 
-// name input blur
+// checking validation when name input blur
 
 nameInput.onblur = () => {
   if (nameInput.value.length < 5) {
@@ -53,6 +53,8 @@ nameInput.onblur = () => {
     signMsg.innerText = "";
   }
 };
+
+// checking validation when name input change
 
 nameInput.addEventListener("input", () => {
   if (nameInput.value.length < 5) {
@@ -72,7 +74,7 @@ nameInput.addEventListener("input", () => {
   }
 });
 
-// email input blur
+// checking validation when email input blur
 
 emailInput.onblur = () => {
   if (
@@ -90,7 +92,7 @@ emailInput.onblur = () => {
   }
 };
 
-// email input change
+// checking validation when email input change
 
 emailInput.addEventListener("input", () => {
   if (
@@ -116,7 +118,7 @@ emailInput.addEventListener("input", () => {
   }
 });
 
-// password input blur
+// checking validation when password input blur
 
 passwordInput.onblur = () => {
   if (!regularExpression.test(passwordInput.value)) {
@@ -129,7 +131,7 @@ passwordInput.onblur = () => {
   }
 };
 
-// password input change
+// checking validation when password input change
 
 passwordInput.addEventListener("input", () => {
   if (!regularExpression.test(passwordInput.value)) {
@@ -149,11 +151,23 @@ passwordInput.addEventListener("input", () => {
   }
 });
 
-// sign process: clicking button
-signBtn.onclick = () => {
-  if (signType == "signup") {
+/* sign process: clicking button 
+  the signType can be two values signin and signup
+  when each of them is called the data will be included in the post Api,
+  then if auth done the user can join the system
+*/
+
+signBtn.onclick = async () => {
+  const res = await friendoo.postAPI(`/sign/${signType}`, {
+    name: nameInput.value,
+    email: emailInput.value,
+    password: passwordInput.value,
+  });
+  if (res.data) {
+    localStorage.setItem("friendooJWT", res.data.authorisation.token);
+    localStorage.setItem("friendooUser", res.data.user);
     window.location.replace("./index.html");
-  } else if (signType == "signin") {
-    window.location.replace("./index.html");
+  } else {
+    signMsg.innerText = res;
   }
 };
