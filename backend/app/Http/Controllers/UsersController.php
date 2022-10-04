@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Block;
-
+use App\Models\Favorite;
 
 class UsersController extends Controller{
 
@@ -60,7 +60,8 @@ function switchBlock(Request $request, $id){
                 ->first();
     if($blocked){
         $blocked->state = !$blocked->state;
-    }else{
+    }
+    else{
         $blocked = new Block;
         $blocked->user_id = $id;
         $blocked->blocked_id = $request->blocked_id;
@@ -71,6 +72,22 @@ function switchBlock(Request $request, $id){
 
 }
 
-function switchLike($id){
+function switchLike(Request $request, $id){
+
+    $liked = Favorite::where('user_id',$id)
+                ->where('liked_id',$request->liked_id)
+                ->first();
+    if($liked){
+        $liked->state = !$liked->state;
+    }
+    else{
+        $liked = new Block;
+        $liked->user_id = $id;
+        $liked->liked_id = $request->liked_id;
+        $liked->state = 1;
+    }
+    $liked->save();
+    return response()->json(["status" => "Success"]);
+
 }
 }
