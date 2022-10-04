@@ -9,19 +9,24 @@ use App\Http\Controllers\MessagesController;
 Route::group(["prefix"=> "v0.1"], function(){
       
     Route::controller(AuthController::class)->group(function () {
+        Route::get("/sign/signin", 'redirect')->name('login');
         Route::post("/sign/signin", 'login');
         Route::post("/sign/signup", 'register');
     });
+    
+    Route::group(['middleware'=> 'auth:api'], function(){
+        Route::controller(UsersController::class)->group(function () {
+            Route::post("/users/update_user/{id?}", 'updateUser');
+            Route::get("/users/all/{id?}", 'getInterested');
+            Route::get("/users/contact/all/{id?}", 'getContact');
+            Route::post("/users/block/{id?}", 'switchBlock');
+            Route::post("/users/like/{id?}", 'switchLike');
+        });
 
-    Route::post("/users/update_user/{id?}", [UsersController::class, 'updateUser']);
-    Route::get("/users/all/{id?}", [UsersController::class, 'getInterested']);
-    Route::get("/users/contact/all/{id?}", [UsersController::class, 'getContact']);
-    Route::post("/users/block/{id?}", [UsersController::class, 'switchBlock']);
-    Route::post("/users/like/{id?}", [UsersController::class, 'switchLike']);
-    Route::post("/messages/send", [MessagesController::class, 'sendMessage']);
-    Route::get("/messages/all/{id?}/{reciever_id?}", [MessagesController::class, 'getMessages']);
-    // Route::group(['middleware'=> 'auth:api'], function(){
-    // });
-
+        Route::controller(MessagesController::class)->group(function () {
+            Route::post("/messages/send", 'sendMessage');
+            Route::get("/messages/all/{id?}/{reciever_id?}", 'getMessages');
+        });
+    });
 
 });

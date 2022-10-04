@@ -36,6 +36,10 @@ class AuthController extends Controller
 
     }
 
+    function redirect (){
+        return response()->json(['status' => 'failed']);
+    }
+
     public function register(Request $request){
         $request->validate([
             'name' => 'required|string|max:255',
