@@ -19,3 +19,5 @@ const users = [
     bio: "My name is Nancy, I love hiking if you which to be my partner",
   },
 ];
+
+if (!localStorage.getItem("friendooJWT")) window.location.replace("/sign.html");

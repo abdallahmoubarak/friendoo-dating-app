@@ -299,7 +299,7 @@ body {
 
 .invalid-msg {
   color: red;
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-align: left;
   min-height: 2rem;
   padding: 0.3rem 0;
