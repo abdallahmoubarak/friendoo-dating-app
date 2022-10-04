@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Block;
+
 
 class UsersController extends Controller{
 
@@ -41,12 +43,34 @@ function getInterested($id){
 
 }
 
-function getContact(){
+function getContact($id){
+
+    // return response()->json([
+    //     "status" => "Success",
+    //     "data" => $users
+    // ]);
+    // return response()->json(["status" => "Error"]);
+
 }
 
-function switchBlock(){
+function switchBlock(Request $request, $id){
+
+    $blocked = Block::where('user_id',$id)
+                ->where('blocked_id',$request->blocked_id)
+                ->first();
+    if($blocked){
+        $blocked->state = !$blocked->state;
+    }else{
+        $blocked = new Block;
+        $blocked->user_id = $id;
+        $blocked->blocked_id = $request->blocked_id;
+        $blocked->state = 1;
+    }
+    $blocked->save();
+    return response()->json(["status" => "Success"]);
+
 }
 
-function switchLike(){
+function switchLike($id){
 }
 }

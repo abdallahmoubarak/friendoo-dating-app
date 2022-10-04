@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('blocks', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id');
+            $table->string('blocked_id');
+            $table->boolean('state');
             $table->timestamps();
         });
     }
