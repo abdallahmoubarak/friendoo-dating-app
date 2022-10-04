@@ -48,8 +48,11 @@ favoriteBtn.onclick = async () => {
   document.getElementById("circule").classList.remove("display-none");
   document.getElementById("circule-back").classList.remove("display-none");
   loopOverImgs();
-  const interestedIn = await friendoo.getAPI("/users/all/3");
-  console.log(interestedIn.data.data);
+  const interestedIn = await friendoo.getAPI(
+    "/users/all",
+    localStorage.getItem("friendooJWT"),
+  );
+  if (interestedIn.data) console.log(interestedIn.data.data);
 };
 
 usersBtn.onclick = () => {

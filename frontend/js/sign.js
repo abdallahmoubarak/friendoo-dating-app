@@ -165,7 +165,7 @@ signBtn.onclick = async () => {
   });
   if (res.data) {
     localStorage.setItem("friendooJWT", res.data.authorisation.token);
-    localStorage.setItem("friendooUser", res.data.user);
+    localStorage.setItem("friendooUser", JSON.stringify(res.data.user));
     window.location.replace("./index.html");
   } else {
     signMsg.innerText = res;

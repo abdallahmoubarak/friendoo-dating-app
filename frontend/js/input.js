@@ -1,4 +1,4 @@
-const input = (id, name) => {
+const input = (id, name, value) => {
   return `
     <div class="input-container" id="${id}-container">
         <input
@@ -6,7 +6,9 @@ const input = (id, name) => {
               autocomplete="off"
               id="${id}"
               type=${id == "password" ? "password" : "text"}
-              placeholder="${name}" />
+              placeholder="${name}"
+              value='${value || ""}'
+              />
         <label for="${id}">${name}</label>
     </div>`;
 };
