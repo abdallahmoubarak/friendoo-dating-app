@@ -37,7 +37,7 @@ class AuthController extends Controller
     }
 
     function redirect (){
-        return response()->json(['status' => 'failed']);
+        return response()->json(['status' => 'error']);
     }
 
     public function register(Request $request){

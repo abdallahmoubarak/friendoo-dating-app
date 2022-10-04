@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Block;
 use App\Models\Favorite;
-use Tymon\JWTAuth\Contracts\JWTSubject;
+use Illuminate\Support\Facades\Auth;
+
 
 class UsersController extends Controller{
     
@@ -20,9 +21,9 @@ class UsersController extends Controller{
         return [];
     }
 
-function updateUser(Request $request, $id){
+function updateUser(Request $request){
 
-    $user = User::find($id);
+    $user = User::find(Auth::id());
     $user->name = $request->name ? $request->name : $user->name;
     $user->bio = $request->bio ? $request->bio : $user->bio;
     $user->birthdate = $request->birthdate ? $request->birthdate : $user->birthdate;
@@ -35,7 +36,7 @@ function updateUser(Request $request, $id){
 
     if($user->save()) {
         return response()->json([
-            "status" => "Success",
+            "status" => "success",
             "data" => $user
         ]);
     }
@@ -49,15 +50,15 @@ function updateUser(Request $request, $id){
     4. returning list of interested without none interested_in
 */
 
-function getInterested($id){
+function getInterested(){
     
-    $user = User::find($id);
-    $blocked = Block::where('user_id',$id)
+    $user = User::find(Auth::id());
+    $blocked = Block::where('user_id',Auth::id())
                 ->where('state',1)
                 ->get();
     
     $blocked_ids = array();
-    $blocked_ids[] = $id;
+    $blocked_ids[] = Auth::id();
 
     foreach ($blocked as $block) {
         $blocked_ids[] = $block['blocked_id'];
@@ -66,9 +67,9 @@ function getInterested($id){
     $users= User::where('gender', $user->interested_in)
             ->whereNotIn('id', $blocked_ids )
             ->get();
-
+    
     return response()->json([
-        "status" => "Success",
+        "status" => "success",
         "data" => $users
     ]);
 
@@ -78,19 +79,19 @@ function getInterested($id){
 
 // contacts are those users who have messages between current user
 
-function getContact($id){
+function getContact(){
 
     // return response()->json([
-    //     "status" => "Success",
+    //     "status" => "success",
     //     "data" => $users
     // ]);
     // return response()->json(["status" => "Error"]);
 
 }
 
-function switchBlock(Request $request, $id){
+function switchBlock(Request $request){
 
-    $blocked = Block::where('user_id',$id)
+    $blocked = Block::where('user_id', Auth::id())
                 ->where('blocked_id',$request->blocked_id)
                 ->first();
     if($blocked){
@@ -98,18 +99,18 @@ function switchBlock(Request $request, $id){
     }
     else{
         $blocked = new Block;
-        $blocked->user_id = $id;
+        $blocked->user_id =  Auth::id();
         $blocked->blocked_id = $request->blocked_id;
         $blocked->state = 1;
     }
     $blocked->save();
-    return response()->json(["status" => "Success"]);
+    return response()->json(["status" => "success"]);
 
 }
 
-function switchLike(Request $request, $id){
+function switchLike(Request $request){
 
-    $liked = Favorite::where('user_id',$id)
+    $liked = Favorite::where('user_id', Auth::id())
                 ->where('liked_id',$request->liked_id)
                 ->first();
     if($liked){
@@ -117,12 +118,12 @@ function switchLike(Request $request, $id){
     }
     else{
         $liked = new Favorite;
-        $liked->user_id = $id;
+        $liked->user_id =  Auth::id();
         $liked->liked_id = $request->liked_id;
         $liked->state = 1;
     }
     $liked->save();
-    return response()->json(["status" => "Success"]);
+    return response()->json(["status" => "success"]);
 
 }
 }

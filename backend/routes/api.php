@@ -17,7 +17,7 @@ Route::group(["prefix"=> "v0.1"], function(){
     Route::group(['middleware'=> 'auth:api'], function(){
         Route::controller(UsersController::class)->group(function () {
             Route::post("/users/update_user/{id?}", 'updateUser');
-            Route::get("/users/all/{id?}", 'getInterested');
+            Route::get("/users/all", 'getInterested');
             Route::get("/users/contact/all/{id?}", 'getContact');
             Route::post("/users/block/{id?}", 'switchBlock');
             Route::post("/users/like/{id?}", 'switchLike');
