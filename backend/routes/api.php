@@ -13,7 +13,7 @@ Route::group(["prefix"=> "v0.1"], function(){
     Route::post("/sign/signup", [AuthController::class, 'signUp']);
     
     Route::post("/users/update_user/{id?}", [UsersController::class, 'updateUser']);
-    Route::get("/users/all/{id?}", [UsersController::class, 'getUsers']);
+    Route::get("/users/all/{id?}", [UsersController::class, 'getInterested']);
     Route::get("/users/contact/all/{id?}", [UsersController::class, 'getContact']);
     Route::post("/users/block/{id?}", [UsersController::class, 'switchBlock']);
     Route::post("/users/like/{id?}", [UsersController::class, 'switchLike']);

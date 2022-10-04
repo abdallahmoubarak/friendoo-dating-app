@@ -5,12 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 
-
 class UsersController extends Controller{
 
 function updateUser(Request $request, $id){
-
-    $user = new User;
 
     $user = User::find($id);
     $user->name = $request->name ? $request->name : $user->name;
@@ -23,7 +20,6 @@ function updateUser(Request $request, $id){
     $user->lat = $request->lat ? $request->lat : $user->lat;
     $user->gender = $request->gender ? $request->gender : $user->gender;
 
-
     if($user->save()) {
         return response()->json([
             "status" => "Success",
@@ -33,7 +29,16 @@ function updateUser(Request $request, $id){
     return response()->json(["status" => "Error"]);
 }
 
-function getUsers(){
+function getInterested($id){
+    
+    $user = User::find($id);
+    $users= User::where('gender', $user->interested_in)->get();
+    return response()->json([
+        "status" => "Success",
+        "data" => $users
+    ]);
+    return response()->json(["status" => "Error"]);
+
 }
 
 function getContact(){
