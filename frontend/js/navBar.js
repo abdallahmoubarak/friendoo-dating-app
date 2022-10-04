@@ -43,11 +43,13 @@ const favoriteBtn = document.getElementById("favorite");
 const usersBtn = document.getElementById("users");
 const contactBtn = document.getElementById("contact");
 
-favoriteBtn.onclick = () => {
+favoriteBtn.onclick = async () => {
   document.getElementById("app-body").innerHTML = favoritePage();
   document.getElementById("circule").classList.remove("display-none");
   document.getElementById("circule-back").classList.remove("display-none");
   loopOverImgs();
+  const interestedIn = await friendoo.getAPI("/users/all/3");
+  console.log(interestedIn.data.data);
 };
 
 usersBtn.onclick = () => {
