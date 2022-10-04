@@ -6,8 +6,19 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Block;
 use App\Models\Favorite;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class UsersController extends Controller{
+    
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
 
 function updateUser(Request $request, $id){
 
