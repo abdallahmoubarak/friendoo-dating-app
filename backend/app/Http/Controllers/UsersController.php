@@ -28,6 +28,7 @@ function updateUser(Request $request){
     $user->bio = $request->bio ? $request->bio : $user->bio;
     $user->birthdate = $request->birthdate ? $request->birthdate : $user->birthdate;
     $user->interested_in = $request->interested_in ? $request->interested_in : $user->interested_in;
+    $user->status = $request->status ? $request->status : $user->status;
     $user->password = $request->password ? $request->password : $user->password;
     $user->picture_url = $request->picture_url ? $request->picture_url : $user->picture_url;
     $user->long = $request->long ? $request->long : $user->long;
@@ -40,7 +41,7 @@ function updateUser(Request $request){
             "data" => $user
         ]);
     }
-    return response()->json(["status" => "Error"]);
+    return response()->json(["status" => "error"]);
 }
 
 /* The logic behind the get interested function is:
