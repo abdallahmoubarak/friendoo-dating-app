@@ -158,7 +158,7 @@ passwordInput.addEventListener("input", () => {
 */
 
 signBtn.onclick = async () => {
-  const res = await friendoo.postAPI(`/sign/${signType}`, {
+  let res = await friendoo.postAPI(`/sign/${signType}`, {
     name: nameInput.value,
     email: emailInput.value,
     password: passwordInput.value,
