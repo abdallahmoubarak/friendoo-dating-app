@@ -3,6 +3,8 @@ const friendoo = {};
 friendoo.baseURL = "http://127.0.0.1:8000/api/v0.1";
 friendoo.assetsURL = "http://127.0.0.1:8000/assets";
 
+/************** A re-useable function that used get method for API's **************/
+
 friendoo.getAPI = async (api_route, api_token = null) => {
   try {
     const res = await axios(friendoo.baseURL + api_route, {
@@ -15,6 +17,8 @@ friendoo.getAPI = async (api_route, api_token = null) => {
     return error.response.data.message;
   }
 };
+
+/************** A re-useable function that used post method for API's **************/
 
 friendoo.postAPI = async (api_route, api_data, api_token = null) => {
   try {
@@ -29,10 +33,26 @@ friendoo.postAPI = async (api_route, api_data, api_token = null) => {
   }
 };
 
-// a function to change the time view
+/************** A function to update the location of the user **************/
+
+friendoo.updateLocation = () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      friendoo.postAPI(
+        "/location/update",
+        { lat: position.coords.latitude, long: position.coords.longitude },
+        localStorage.getItem("friendooJWT"),
+      );
+    });
+  } else {
+    console.log("Geolocation is not supported by this browser.");
+  }
+};
+
+/************** A function to change the time view **************/
+
 friendoo.timeChanger = (od) => {
   const date = new Date(od);
-
   const hours = date.getHours();
   const minute = date.getMinutes();
   const secound = date.getSeconds();
@@ -43,3 +63,20 @@ friendoo.timeChanger = (od) => {
 
   return hou + ":" + min + ":" + sec;
 };
+
+/************** first things first **************/
+
+if (
+  !localStorage.getItem("friendooJWT") ||
+  !localStorage.getItem("friendooUser")
+) {
+  window.location.replace("/sign.html");
+}
+
+/************** update user's location **************/
+
+friendoo.updateLocation();
+
+/************** main consts **************/
+
+const appBody = document.getElementById("app-body");
