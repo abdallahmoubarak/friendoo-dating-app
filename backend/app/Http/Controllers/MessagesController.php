@@ -13,9 +13,9 @@ class MessagesController extends Controller{
 
         $message = new Message; 
 
-        $message->sender_id = $request->sender_id & $request->sender_id;
-        $message->reciever_id = $request->reciever_id & $request->reciever_id;
-        $message->content = $request->content & $request->content;
+        $message->sender_id = Auth::id();
+        $message->reciever_id = $request->reciever_id;
+        $message->content = $request->content;
 
         if($message->save()){
             return response()->json([
