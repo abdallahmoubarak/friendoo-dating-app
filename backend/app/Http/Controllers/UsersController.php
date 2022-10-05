@@ -55,16 +55,22 @@ function getInterested(){
     $blocked = Block::where('user_id', Auth::id())
                 ->where('state',1)
                 ->get();
+    $liked = Favorite::where('user_id', Auth::id())
+            ->where('state',1)
+            ->get();
     
-    $blocked_ids = array();
-    $blocked_ids[] = Auth::id();
+    $bind_ids = array();
+    $bind_ids[] = Auth::id();
 
     foreach ($blocked as $block) {
-        $blocked_ids[] = $block['blocked_id'];
+        $bind_ids[] = $block['blocked_id'];
+    }
+    foreach ($liked as $like) {
+        $bind_ids[] = $like['liked_id'];
     }
     
-    $users= User::where('gender', $user->interested_in)
-            ->whereNotIn('id', $blocked_ids )
+    $users=User::where('gender', $user->interested_in)
+            ->whereNotIn('id', $bind_ids )
             ->get();
     
     return response()->json([
