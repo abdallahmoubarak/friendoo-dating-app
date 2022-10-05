@@ -2,7 +2,9 @@ const userProfilePage = (user) => {
   return `
   <div class='user-profile-page'>
       <div class='user-profile-picture'>
-        <img src='${user.img}' alt=''/>
+        <img src='${
+          friendoo.assetsURL + (user.profile_img || "/default.png")
+        }' alt=''/>
       </div>
       <div class='user-profile-info'>
         <div class='card-title'>
