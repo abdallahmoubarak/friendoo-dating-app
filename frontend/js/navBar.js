@@ -48,6 +48,7 @@ favoriteBtn.onclick = async () => {
   document.getElementById("circule-back").classList.remove("display-none");
   document.getElementById("app-body").innerHTML = await favoritePage();
   await loopOverImgs();
+  await loopOverIds();
 };
 
 usersBtn.onclick = async () => {
@@ -55,6 +56,7 @@ usersBtn.onclick = async () => {
   document.getElementById("circule-back").classList.remove("display-none");
   document.getElementById("app-body").innerHTML = await usersPage();
   await loopOverImgs();
+  await loopOverIds();
 };
 
 contactBtn.onclick = async () => {

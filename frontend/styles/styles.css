@@ -418,6 +418,9 @@ label {
 .padding-top-bottom {
   padding: 2rem 0rem;
 }
+.pointer {
+  cursor: pointer;
+}
 
 /* --------------- profile page ---------------- */
 
@@ -664,12 +667,26 @@ label {
   overflow-y: auto;
 }
 
+.chat-input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+.chat-input-container img {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+
 .chat-input {
   width: 100%;
   font-size: 1.2rem;
   padding: 0.6rem 1rem;
-  border: none;
   border: 1px solid gray;
+  flex: 1 1 100%;
   border-radius: 0.4rem;
   -webkit-border-radius: 0.4rem;
   -moz-border-radius: 0.4rem;
