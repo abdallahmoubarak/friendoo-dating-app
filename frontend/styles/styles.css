@@ -421,7 +421,12 @@ label {
 .pointer {
   cursor: pointer;
 }
-
+.loading {
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  margin: auto;
+}
 /* --------------- profile page ---------------- */
 
 .profile-picture {
