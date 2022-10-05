@@ -1,7 +1,7 @@
 const regularExpression =
   /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
-// sign validation function
+/************** Sign Validation Function **************/
 const validateSign = (signType, name, mail, password) => {
   valid = true;
   if (
