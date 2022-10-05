@@ -1,6 +1,5 @@
 const navBar = () => {
-  let nav = `
-  <div class="nav-container">
+  return `<div class="nav-container">
     <ul class="nav-ul">
       <li class="nav-li" id='favorite'>
         <div class="nav-icon">
@@ -24,12 +23,14 @@ const navBar = () => {
       <div class="circule" id='circule'></div>
     </ul>
   </div>`;
-  return nav;
 };
 
-document.getElementById("nav-bar").innerHTML = navBar();
+/************** Setting Nav Bar **************/
 
+navBarId.innerHTML = navBar();
 const list = document.querySelectorAll(".nav-li");
+
+/************** Activating Item In Nav Bar **************/
 
 list.forEach((item) => {
   item.addEventListener("click", () => {
@@ -37,32 +38,3 @@ list.forEach((item) => {
     item.classList.add("active");
   });
 });
-
-// switching between pages
-
-const favoriteBtn = document.getElementById("favorite");
-const usersBtn = document.getElementById("users");
-const contactBtn = document.getElementById("contact");
-
-favoriteBtn.onclick = async () => {
-  document.getElementById("circule").classList.remove("display-none");
-  document.getElementById("circule-back").classList.remove("display-none");
-  document.getElementById("app-body").innerHTML = await favoritePage();
-  await loopOverImgs();
-  await loopOverIds();
-};
-
-usersBtn.onclick = async () => {
-  document.getElementById("circule").classList.remove("display-none");
-  document.getElementById("circule-back").classList.remove("display-none");
-  document.getElementById("app-body").innerHTML = await usersPage();
-  await loopOverImgs();
-  await loopOverIds();
-};
-
-contactBtn.onclick = async () => {
-  document.getElementById("circule").classList.remove("display-none");
-  document.getElementById("circule-back").classList.remove("display-none");
-  document.getElementById("app-body").innerHTML = await contactPage();
-  await loopOverContacts();
-};

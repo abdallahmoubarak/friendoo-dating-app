@@ -1,5 +1,6 @@
 const contactPage = async () => {
-  document.getElementById("app-body").innerHTML =
+  /************** Setting A Loader Before Loading The Page **************/
+  appBody.innerHTML =
     "<div class='loading'><img src='./assets/loading.gif' alt='loading' /></div>";
 
   const users = await friendoo.getAPI(

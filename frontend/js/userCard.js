@@ -17,11 +17,13 @@ const userCard = (user) => {
                 <div>Distance: 3.2km</div>
             </div>
             <div class='card-like' id='${user.id}'>
-                <img src='${
+                <img src='
+                ${
                   user.favorite
                     ? "./assets/active-heart-icon.svg"
                     : "./assets/unactive-heart-icon.svg"
-                }' alt='' />
+                }
+                ' alt='' />
             </div>
         </div>
     </div>`;

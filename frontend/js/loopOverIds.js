@@ -1,7 +1,7 @@
 const loopOverIds = async () => {
-  let listeningUserCard = document.querySelectorAll(".card-like");
+  let likeBtn = document.querySelectorAll(".card-like");
 
-  listeningUserCard.forEach((item) => {
+  likeBtn.forEach((item) => {
     item.onclick = async () => {
       friendoo.postAPI(
         "/users/like",

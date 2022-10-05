@@ -1,5 +1,5 @@
 const chatPage = (user, chats) => {
-  let page = `
+  return `
   <div class='chat-page'>
     <div class='chat-head'>
       <div class='profile-img'>
@@ -29,5 +29,4 @@ const chatPage = (user, chats) => {
       <img src='./assets/send-icon.svg' alt='' id='send-msg'/>
     </div>
   </div>`;
-  return page;
 };

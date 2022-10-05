@@ -41,9 +41,3 @@ const defaultMsgs = [
     created_at: Date.now(),
   },
 ];
-
-if (
-  !localStorage.getItem("friendooJWT") ||
-  !localStorage.getItem("friendooUser")
-)
-  window.location.replace("/sign.html");

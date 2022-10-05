@@ -3,7 +3,7 @@ const friendoo = {};
 friendoo.baseURL = "http://127.0.0.1:8000/api/v0.1";
 friendoo.assetsURL = "http://127.0.0.1:8000/assets";
 
-/************** A re-useable function that used get method for API's **************/
+/************** A Re-useable Function That Used Get Method For API's **************/
 
 friendoo.getAPI = async (api_route, api_token = null) => {
   try {
@@ -18,7 +18,7 @@ friendoo.getAPI = async (api_route, api_token = null) => {
   }
 };
 
-/************** A re-useable function that used post method for API's **************/
+/************** A Re-useable Function That Used Post Method For API's **************/
 
 friendoo.postAPI = async (api_route, api_data, api_token = null) => {
   try {
@@ -33,7 +33,7 @@ friendoo.postAPI = async (api_route, api_data, api_token = null) => {
   }
 };
 
-/************** A function to update the location of the user **************/
+/************** Updating User Location **************/
 
 friendoo.updateLocation = () => {
   if (navigator.geolocation) {
@@ -49,7 +49,7 @@ friendoo.updateLocation = () => {
   }
 };
 
-/************** A function to change the time view **************/
+/************** Changes The Way To View Time **************/
 
 friendoo.timeChanger = (od) => {
   const date = new Date(od);
@@ -64,7 +64,7 @@ friendoo.timeChanger = (od) => {
   return hou + ":" + min + ":" + sec;
 };
 
-/************** first things first **************/
+/************** First Things First **************/
 
 if (
   !localStorage.getItem("friendooJWT") ||
@@ -73,10 +73,11 @@ if (
   window.location.replace("/sign.html");
 }
 
-/************** update user's location **************/
+/************** Update User's Location **************/
 
 friendoo.updateLocation();
 
-/************** main consts **************/
+/************** Main Consts **************/
 
 const appBody = document.getElementById("app-body");
+const navBarId = document.getElementById("nav-bar");

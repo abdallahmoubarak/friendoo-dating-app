@@ -27,10 +27,6 @@ const userProfilePage = (user) => {
           <span class='secondary-color'>Interested in: </span>
           ${user.interested_in}
         </div>
-        <div>
-          <span class='secondary-color'>Distance: </span>
-          3.2km
-        </div>
       </div>
     </div>`;
 };

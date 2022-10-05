@@ -8,16 +8,13 @@ const contactCard = (user) => {
           </div>
           <div class='contact-body'>
               <div class='card-text'>
-                  <div class='card-title'>${user.name}</div>
-                  <div>
-                    Status: <span class='${
-                      user.status == "online" ? "green" : "gray"
-                    }'>${user.status}</span>
-                  </div>
+                  <div class='card-title'>${user.name}</div> 
                   <div>Distance: 3.2km</div>
               </div>
               <div>
-                  12:00PM
+                <span class='${user.status == "online" ? "green" : "gray"}'>
+                  ${user.status}
+                </span>
               </div>
           </div>
       </div>`;

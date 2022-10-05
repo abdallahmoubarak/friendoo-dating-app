@@ -1,10 +1,10 @@
 const userCardsContainer = (users) => {
-  let usersHTML = "";
+  /*************** Looping Over User's List And Returning A Component **************/
+  let usersList = "";
   users.map((user) => {
-    usersHTML += userCard(user);
+    usersList += userCard(user);
   });
-  return `
-    <div class='user-cards-container'>
-        ${usersHTML}
-    </div>`;
+  return `<div class='user-cards-container'>
+            ${usersList}
+          </div>`;
 };

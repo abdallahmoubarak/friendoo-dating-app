@@ -1,7 +1,7 @@
+/************** setting up the initial page **************/
+
 const inputSection = document.getElementById("input-section-container");
 const opsContainer = document.getElementById("form-operations");
-
-//  setting up the initial page
 
 inputSection.innerHTML =
   input("name", "Full Name") +
@@ -10,7 +10,7 @@ inputSection.innerHTML =
 
 opsContainer.innerHTML = formOps();
 
-// needed ids after setting up the page
+/************** needed ids after setting up the page **************/
 
 const switchSign = document.getElementById("switch-sign");
 const signBtn = document.getElementById("sign-btn");
@@ -21,7 +21,7 @@ const passwordInput = document.getElementById("password");
 const signMsg = document.getElementById("sign-msg");
 let signType = "signup";
 
-// switcher between sign in sign up page
+/************** switcher between sign in sign up page **************/
 
 switchSign.onclick = () => {
   if (switchSign.innerText == "I already have an account") {
@@ -40,10 +40,9 @@ switchSign.onclick = () => {
   }
 };
 
-// sign process: validating sign
+/************** sign process: validating sign **************/
 
-// checking validation when name input blur
-
+/************** checking validation when name input blur **************/
 nameInput.onblur = () => {
   if (nameInput.value.length < 5) {
     nameInput.classList.add("invalid-sign-input");
@@ -54,7 +53,7 @@ nameInput.onblur = () => {
   }
 };
 
-// checking validation when name input change
+/************** checking validation when name input change **************/
 
 nameInput.addEventListener("input", () => {
   if (nameInput.value.length < 5) {
@@ -74,7 +73,7 @@ nameInput.addEventListener("input", () => {
   }
 });
 
-// checking validation when email input blur
+/************** checking validation when email input blur **************/
 
 emailInput.onblur = () => {
   if (
@@ -92,7 +91,7 @@ emailInput.onblur = () => {
   }
 };
 
-// checking validation when email input change
+/************** checking validation when email input change **************/
 
 emailInput.addEventListener("input", () => {
   if (
@@ -118,7 +117,7 @@ emailInput.addEventListener("input", () => {
   }
 });
 
-// checking validation when password input blur
+/************** checking validation when password input blur **************/
 
 passwordInput.onblur = () => {
   if (!regularExpression.test(passwordInput.value)) {
@@ -131,7 +130,7 @@ passwordInput.onblur = () => {
   }
 };
 
-// checking validation when password input change
+/************** checking validation when password input change **************/
 
 passwordInput.addEventListener("input", () => {
   if (!regularExpression.test(passwordInput.value)) {
@@ -151,7 +150,8 @@ passwordInput.addEventListener("input", () => {
   }
 });
 
-/* sign process: clicking button 
+/**************  sign process: clicking sign button **************/
+/*  
   the signType can be two values signin and signup
   when each of them is called the data will be included in the post Api,
   then if auth done the user can join the system

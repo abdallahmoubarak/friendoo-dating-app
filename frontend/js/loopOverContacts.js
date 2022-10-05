@@ -13,16 +13,14 @@ const loopOverContacts = async () => {
         (element) => element.id == item.id.split("card-")[1],
       )[0];
 
-      document.getElementById("app-body").innerHTML = chatPage(
-        user,
-        await messageBox(user.id),
-      );
+      appBody.innerHTML = chatPage(user, await messageBox(user.id));
 
-      /* nav controler */
+      /************** Deactivating Nav Bar **************/
       list.forEach((item) => item.classList.remove("active"));
       document.getElementById("circule").classList.add("display-none");
       document.getElementById("circule-back").classList.add("display-none");
 
+      /************** Handle Sending Message **************/
       document.getElementById("send-msg").onclick = async () => {
         const chatInput = document.getElementById("chat-input");
         if (chatInput.value) {
