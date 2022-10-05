@@ -19,6 +19,28 @@ const users = [
     bio: "My name is Nancy, I love hiking if you which to be my partner",
   },
 ];
+const defaultMsgs = [
+  {
+    content: "hello world",
+    sender_id: "17",
+    reciever_id: "2",
+    created_at: Date.now(),
+  },
+
+  {
+    content: "hello Universe ",
+    sender_id: "2",
+    reciever_id: "17",
+    created_at: Date.now(),
+  },
+
+  {
+    content: "how are you??",
+    sender_id: "2",
+    reciever_id: "17",
+    created_at: Date.now(),
+  },
+];
 
 if (
   !localStorage.getItem("friendooJWT") ||
