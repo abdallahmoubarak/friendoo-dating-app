@@ -1,7 +1,7 @@
 const contactCardsContainer = (users) => {
   let usersHTML = "";
-  users.map((u) => {
-    usersHTML += contactCard(u.id, u.name, u.img, u.status);
+  users.map((user) => {
+    usersHTML += contactCard(user);
   });
   return `
       <div class='contact-cards-container'>
