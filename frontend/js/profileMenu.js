@@ -42,6 +42,6 @@ profileMenu.onclick = () => {
       localStorage.setItem("friendooUser", JSON.stringify(res.data.data));
 
     currentUser = JSON.parse(localStorage.getItem("friendooUser"));
-    document.getElementById("app-body").innerHTML = usersPage();
+    document.getElementById("app-body").innerHTML = await usersPage();
   };
 };

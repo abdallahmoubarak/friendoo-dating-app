@@ -3,7 +3,14 @@ const profilePage = (user = currentUser) => {
   return (
     `<div class='form'>
     <div class='profile-picture'>
-        <img src='${friendoo.assetsURL}/admin.png' alt=""/>
+    <div class='profile-img'>
+          <label for="file-input" class="">
+            <img src='${
+              friendoo.assetsURL + (user.profile_img || "/admin.png")
+            }' alt=''/>
+          </label>
+          <input class="file-input" id="file-input" type="file" />
+        </div>
     </div><div class='input-section-container padding-top-bottom'>` +
     input("name", "Full Name", user.name) +
     input("bio", "Bio", user.bio) +
