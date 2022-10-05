@@ -20,4 +20,8 @@ const users = [
   },
 ];
 
-if (!localStorage.getItem("friendooJWT")) window.location.replace("/sign.html");
+if (
+  !localStorage.getItem("friendooJWT") ||
+  !localStorage.getItem("friendooUser")
+)
+  window.location.replace("/sign.html");
