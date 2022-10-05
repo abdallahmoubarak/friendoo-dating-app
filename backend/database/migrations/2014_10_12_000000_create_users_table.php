@@ -19,8 +19,8 @@ return new class extends Migration
             $table->date('birthdate')->nullable();
             $table->string('interested_in')->nullable();
             $table->string('picture_url')->nullable();
-            $table->string('long')->nullable();
-            $table->string('lat')->nullable();
+            $table->string('longt')->nullable()->decimal();
+            $table->string('lat')->nullable()->decimal();
             $table->string('gender')->nullable();
             $table->rememberToken();
             $table->timestamps();
