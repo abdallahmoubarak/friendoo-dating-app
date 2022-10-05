@@ -18,7 +18,7 @@ const chatPage = (user) => {
               ${user.status}</span>
             </div>
           </div>
-          <div class='pointer'>
+          <div class='pointer' id='block'>
             Block
           </div>
         </div>

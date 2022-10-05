@@ -3,7 +3,7 @@ const contactPage = async () => {
     "<div class='loading'><img src='./assets/loading.gif' alt='loading' /></div>";
 
   const users = await friendoo.getAPI(
-    "/users/all",
+    "/users/contacts/all",
     localStorage.getItem("friendooJWT"),
   );
 
