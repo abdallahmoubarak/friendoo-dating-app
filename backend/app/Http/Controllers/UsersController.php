@@ -44,8 +44,8 @@ function updateUser(Request $request){
 
 /* The logic behind the get interested function is:
     1. finding the user by id
-    2. looking for blocked users
-    3. including the user id in none interested list
+    2. finding blocked and liked users
+    3. including those users id in none interested list
     4. returning list of interested without none interested_in
 */
 
@@ -59,18 +59,18 @@ function getInterested(){
             ->where('state',1)
             ->get();
     
-    $bind_ids = array();
-    $bind_ids[] = Auth::id();
+    $excepted_ids = array();
+    $excepted_ids[] = Auth::id();
 
     foreach ($blocked as $block) {
-        $bind_ids[] = $block['blocked_id'];
+        $excepted_ids[] = $block['blocked_id'];
     }
     foreach ($liked as $like) {
-        $bind_ids[] = $like['liked_id'];
+        $excepted_ids[] = $like['liked_id'];
     }
     
     $users=User::where('gender', $user->interested_in)
-            ->whereNotIn('id', $bind_ids )
+            ->whereNotIn('id', $excepted_ids )
             ->get();
     
     return response()->json([
@@ -100,7 +100,7 @@ function getFavorites(){
     return response()->json(["status" => "Error"]);
 }
 
-// contacts are those users who have messages between current user
+/* contacts are those users who have messages between current user */
 
 function getContacts(){
 
