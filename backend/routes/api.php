@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\MessagesController;
+use App\Http\Controllers\LocationController;
+
 
 Route::group(["prefix"=> "v0.1"], function(){
       

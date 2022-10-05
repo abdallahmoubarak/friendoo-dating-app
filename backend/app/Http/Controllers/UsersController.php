@@ -29,8 +29,6 @@ function updateUser(Request $request){
     $user->status = $request->status ? $request->status : $user->status;
     $user->password = $request->password ? $request->password : $user->password;
     $user->picture_url = $request->picture_url ? $request->picture_url : $user->picture_url;
-    $user->long = $request->long ? $request->long : $user->long;
-    $user->lat = $request->lat ? $request->lat : $user->lat;
     $user->gender = $request->gender ? $request->gender : $user->gender;
 
     if($user->save()) {
