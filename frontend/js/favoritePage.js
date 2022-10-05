@@ -1,6 +1,6 @@
 const favoritePage = async () => {
   const interestedIn = await friendoo.getAPI(
-    "/users/all",
+    "/users/favorites/all",
     localStorage.getItem("friendooJWT"),
   );
   return (
