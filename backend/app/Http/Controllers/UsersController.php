@@ -7,19 +7,17 @@ use App\Models\User;
 use App\Models\Block;
 use App\Models\Favorite;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\DB;
 
 class UsersController extends Controller{
     
-    public function getJWTIdentifier()
-    {
-        return $this->getKey();
-    }
+public function getJWTIdentifier(){
+    return $this->getKey();
+}
 
-    public function getJWTCustomClaims()
-    {
-        return [];
-    }
+public function getJWTCustomClaims(){
+    return [];
+}
 
 function updateUser(Request $request){
 
@@ -52,7 +50,7 @@ function updateUser(Request $request){
 */
 
 function getInterested(){
-    
+
     $user = User::find(Auth::id());
     $blocked = Block::where('user_id', Auth::id())
                 ->where('state',1)
@@ -78,15 +76,36 @@ function getInterested(){
 
 }
 
+function getFavorites(){
+
+    $users = DB::table('users')
+        ->join('favorites', function ($join) {
+            $join->on('users.id', '=', 'favorites.liked_id')
+                ->where('favorites.user_id', '=', Auth::id());
+        })
+        ->select('users.*', 'favorites.state as favorite')
+        ->get();
+
+    return response()->json([
+        "status" => "success",
+        "data" => $users
+    ]);
+
+    return response()->json(["status" => "Error"]);
+}
+
 // contacts are those users who have messages between current user
 
-function getContact(){
+function getContacts(){
+
+        //   
 
     // return response()->json([
     //     "status" => "success",
     //     "data" => $users
     // ]);
-    // return response()->json(["status" => "Error"]);
+
+    return response()->json(["status" => "error"]);
 
 }
 

@@ -18,7 +18,8 @@ Route::group(["prefix"=> "v0.1"], function(){
         Route::controller(UsersController::class)->group(function () {
             Route::post("/users/update_user", 'updateUser');
             Route::get("/users/all", 'getInterested');
-            Route::get("/users/contact/all", 'getContact');
+            Route::get("/users/favorites/all", 'getFavorites');
+            Route::get("/users/contacts/all", 'getContacts');
             Route::post("/users/block", 'switchBlock');
             Route::post("/users/like", 'switchLike');
         });
