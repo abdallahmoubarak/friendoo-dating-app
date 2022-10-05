@@ -8,7 +8,6 @@ const loopOverIds = async () => {
         { liked_id: item.id },
         localStorage.getItem("friendooJWT"),
       );
-
       item.children[0].src = "assets/active-heart-icon.svg";
     };
   });

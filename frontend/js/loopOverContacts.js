@@ -1,18 +1,36 @@
 const loopOverContacts = async () => {
-  let listeningUserCard = document.querySelectorAll(".contact-card");
+  let contactCards = document.querySelectorAll(".contact-card");
   const interestedIn = await friendoo.getAPI(
-    "/users/all",
+    "/users/contacts/all",
     localStorage.getItem("friendooJWT"),
   );
   let users = interestedIn.data.data;
-  listeningUserCard.forEach((item) => {
-    item.addEventListener("click", () => {
-      document.getElementById("app-body").innerHTML = chatPage(
-        users.filter((user) => user.id == item.id.split("card-")[1])[0],
-      );
+  contactCards.forEach((item) => {
+    item.onclick = () => {
+      let user = users.filter(
+        (user) => user.id == item.id.split("card-")[1],
+      )[0];
+      document.getElementById("app-body").innerHTML = chatPage(user);
       list.forEach((item) => item.classList.remove("active"));
       document.getElementById("circule").classList.add("display-none");
       document.getElementById("circule-back").classList.add("display-none");
-    });
+
+      document.getElementById("block").innerText = user.blocked
+        ? "Unblock"
+        : "Block";
+
+      document.getElementById("block").onclick = async () => {
+        friendoo.postAPI(
+          "/users/block",
+          { blocked_id: user.id },
+          localStorage.getItem("friendooJWT"),
+        );
+        if (document.getElementById("block").innerText == "Block") {
+          document.getElementById("block").innerText = "Unblock";
+        } else {
+          document.getElementById("block").innerText = "Block";
+        }
+      };
+    };
   });
 };
