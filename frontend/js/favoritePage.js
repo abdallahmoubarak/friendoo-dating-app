@@ -1,5 +1,10 @@
-const favoritePage = () => {
+const favoritePage = async () => {
+  const interestedIn = await friendoo.getAPI(
+    "/users/all",
+    localStorage.getItem("friendooJWT"),
+  );
   return (
-    searchInput() + userCardsContainer(users.filter((user) => user.favorite))
+    searchInput() +
+    userCardsContainer(interestedIn.data.data.filter((user) => user.favorite))
   );
 };

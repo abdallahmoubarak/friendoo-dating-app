@@ -1,2 +1,4 @@
-document.getElementById("app-body").innerHTML = usersPage();
-loopOverImgs();
+window.onload = async () => {
+  document.getElementById("app-body").innerHTML = await usersPage();
+  loopOverImgs();
+};

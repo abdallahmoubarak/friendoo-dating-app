@@ -1,6 +1,7 @@
 const friendoo = {};
 
 friendoo.baseURL = "http://127.0.0.1:8000/api/v0.1";
+friendoo.assetsURL = "http://127.0.0.1:8000/assets";
 
 friendoo.getAPI = async (api_route, api_token = null) => {
   try {
