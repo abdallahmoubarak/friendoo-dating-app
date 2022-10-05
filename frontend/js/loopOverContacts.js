@@ -1,6 +1,10 @@
-const loopOverContacts = () => {
+const loopOverContacts = async () => {
   let listeningUserCard = document.querySelectorAll(".contact-card");
-
+  const interestedIn = await friendoo.getAPI(
+    "/users/all",
+    localStorage.getItem("friendooJWT"),
+  );
+  let users = interestedIn.data.data;
   listeningUserCard.forEach((item) => {
     item.addEventListener("click", () => {
       document.getElementById("app-body").innerHTML = chatPage(

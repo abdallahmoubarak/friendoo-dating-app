@@ -1,6 +1,10 @@
-const loopOverImgs = () => {
+const loopOverImgs = async () => {
   let listeningUserCard = document.querySelectorAll(".card-img");
-
+  const interestedIn = await friendoo.getAPI(
+    "/users/all",
+    localStorage.getItem("friendooJWT"),
+  );
+  let users = interestedIn.data.data;
   listeningUserCard.forEach((item) => {
     item.addEventListener("click", () => {
       document.getElementById("app-body").innerHTML = userProfilePage(
