@@ -18,12 +18,15 @@ const chatPage = (user) => {
               ${user.status}</span>
             </div>
           </div>
-          <div>
+          <div class='pointer'>
             Block
           </div>
         </div>
       </div>
       <div class='chat-body' id='chat-body'></div>
-      <input class='chat-input' placeholder='Message' />
+      <div class='chat-input-container'>
+        <input class='chat-input' placeholder='Message' />
+        <img src='./assets/send-icon.svg' alt='' id='send-msg'/>
+      </div>
     </div>`;
 };
