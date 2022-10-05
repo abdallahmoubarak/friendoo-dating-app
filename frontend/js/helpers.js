@@ -34,7 +34,6 @@ friendoo.timeChanger = (od) => {
   const date = new Date(od);
 
   const hours = date.getHours();
-
   const minute = date.getMinutes();
   const secound = date.getSeconds();
 

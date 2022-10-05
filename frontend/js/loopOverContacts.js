@@ -8,14 +8,14 @@ const loopOverContacts = async () => {
   let users = interestedIn.data.data;
 
   contactCards.forEach((item) => {
-    item.onclick = () => {
+    item.onclick = async () => {
       let user = users.filter(
         (element) => element.id == item.id.split("card-")[1],
       )[0];
 
       document.getElementById("app-body").innerHTML = chatPage(
         user,
-        messageBox(),
+        await messageBox(user.id),
       );
 
       /* nav controler */
@@ -23,7 +23,7 @@ const loopOverContacts = async () => {
       document.getElementById("circule").classList.add("display-none");
       document.getElementById("circule-back").classList.add("display-none");
 
-      document.getElementById("send-msg").onclick = () => {
+      document.getElementById("send-msg").onclick = async () => {
         const chatInput = document.getElementById("chat-input");
         if (chatInput.value) {
           friendoo.postAPI(
@@ -32,6 +32,9 @@ const loopOverContacts = async () => {
             localStorage.getItem("friendooJWT"),
           );
           chatInput.value = "";
+          document.getElementById("chat-body").innerHTML = await messageBox(
+            user.id,
+          );
         }
       };
 

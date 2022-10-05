@@ -1,8 +1,13 @@
 let currentUser = JSON.parse(localStorage.getItem("friendooUser"));
 
-const messageBox = () => {
+const messageBox = async (uid) => {
+  const msgs = await friendoo.getAPI(
+    `/messages/all/${uid}`,
+    localStorage.getItem("friendooJWT"),
+  );
+
   let messages = "";
-  defaultMsgs.map(
+  msgs.data.map(
     (msg) =>
       (messages += `<div
       class='msg-container ${msg.sender_id != currentUser.id || "me"}'
