@@ -1,16 +1,18 @@
-const contactCard = (id, name, img, status) => {
+const contactCard = (user) => {
   return `
-      <div class='contact-card' id='card-${id}'>
+      <div class='contact-card' id='card-${user.id}'>
           <div class='contact-img'>
-              <img src=${img} alt=""/>
+              <img src='${
+                friendoo.assetsURL + (user.profile_img || "/default.png")
+              }' alt=""/>
           </div>
           <div class='contact-body'>
               <div class='card-text'>
-                  <div class='card-title'>${name}</div>
+                  <div class='card-title'>${user.name}</div>
                   <div>
                     Status: <span class='${
-                      status == "online" ? "green" : "gray"
-                    }'>${status}</span>
+                      user.status == "online" ? "green" : "gray"
+                    }'>${user.status}</span>
                   </div>
                   <div>Distance: 3.2km</div>
               </div>
