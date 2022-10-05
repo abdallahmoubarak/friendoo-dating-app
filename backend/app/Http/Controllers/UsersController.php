@@ -104,12 +104,26 @@ function getFavorites(){
 
 function getContacts(){
 
-        //   
+    $user = User::find(Auth::id());
+    $blocked = Block::where('user_id', Auth::id())
+                ->where('state',1)
+                ->get();
+    
+    $excepted_ids = array();
+    $excepted_ids[] = Auth::id();
 
-    // return response()->json([
-    //     "status" => "success",
-    //     "data" => $users
-    // ]);
+    foreach ($blocked as $block) {
+        $excepted_ids[] = $block['blocked_id'];
+    }
+
+    $users=User::where('gender', $user->interested_in)
+            ->whereNotIn('id', $excepted_ids )
+            ->get();
+
+    return response()->json([
+        "status" => "success",
+        "data" => $users
+    ]);
 
     return response()->json(["status" => "error"]);
 
