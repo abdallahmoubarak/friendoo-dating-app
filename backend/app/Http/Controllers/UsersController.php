@@ -54,7 +54,7 @@ function updateUser(Request $request){
 function getInterested(){
     
     $user = User::find(Auth::id());
-    $blocked = Block::where('user_id',Auth::id())
+    $blocked = Block::where('user_id', Auth::id())
                 ->where('state',1)
                 ->get();
     
