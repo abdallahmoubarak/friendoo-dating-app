@@ -28,6 +28,10 @@ Route::group(["prefix"=> "v0.1"], function(){
             Route::post("/messages/send", 'sendMessage');
             Route::get("/messages/all/{reciever_id?}", 'getMessages');
         });
+
+        Route::controller(LocationController::class)->group(function () {
+            Route::post("/location/update", 'updateLocation');
+        });
     });
 
 });
