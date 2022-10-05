@@ -41,3 +41,21 @@ const defaultMsgs = [
     created_at: Date.now(),
   },
 ];
+
+/************** First Things First **************/
+
+if (
+  !localStorage.getItem("friendooJWT") ||
+  !localStorage.getItem("friendooUser")
+) {
+  window.location.replace("/sign.html");
+}
+
+/************** Update User's Location **************/
+
+friendoo.updateLocation();
+
+/************** Main Consts **************/
+
+const appBody = document.getElementById("app-body");
+const navBarId = document.getElementById("nav-bar");
