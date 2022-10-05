@@ -50,6 +50,8 @@ You are asked to implement a dating website using Vanilla HTML, CSS, JS, and Lar
 
 #### Stage 3: Creating List of API's needed for the project
 
+![](./src/API's.png?style=center)
+
 ---
 
 #### Stage 4: Creating main branch, and master bransh for the project
