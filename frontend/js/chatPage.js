@@ -4,8 +4,8 @@ const chatPage = (user, chats) => {
     <div class='chat-head'>
       <div class='profile-img'>
         <img src='${
-          friendoo.assetsURL + (user.profile_img || "/default.png")
-        }' alt=''/>
+          friendoo.assetsURL + `/${user.picture_url || "default.png"}`
+        }' alt=""/>
       </div>
       <div class='chat-info'>
         <div>

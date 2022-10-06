@@ -3,7 +3,7 @@ const userCard = (user) => {
     <div class='user-card'>
         <div class='card-img' id="card-${user.id}">
             <img src='${
-              friendoo.assetsURL + (user.profile_img || "/default.png")
+              friendoo.assetsURL + `/${user.picture_url || "default.png"}`
             }' alt=""/>
         </div>
         <div class='card-body'>
@@ -14,7 +14,7 @@ const userCard = (user) => {
                       user.status == "online" ? "green" : "gray"
                     }'>${user.status}</span>
                 </div>
-                <div>Distance: 3.2km</div>
+                <div>Distance: ${getDistance(user.lat, user.longt)}km</div>
             </div>
             <div class='card-like' id='${user.id}'>
                 <img src='

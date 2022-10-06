@@ -38,9 +38,11 @@ friendoo.postAPI = async (api_route, api_data, api_token = null) => {
 friendoo.updateLocation = () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
+      localStorage.setItem("lat", position.coords.latitude);
+      localStorage.setItem("long", position.coords.longitude);
       friendoo.postAPI(
         "/location/update",
-        { lat: position.coords.latitude, long: position.coords.longitude },
+        { lat: position.coords.latitude, longt: position.coords.longitude },
         localStorage.getItem("friendooJWT"),
       );
     });
@@ -62,4 +64,18 @@ friendoo.timeChanger = (od) => {
   const sec = secound < 10 ? "0" + secound : secound;
 
   return hou + ":" + min + ":" + sec;
+};
+
+/************** Change the Birthdate to Age  **************/
+
+const getAge = (birthDate) =>
+  Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e10);
+
+/************** Convert Long Lat To Distination  **************/
+
+const getDistance = (lat, long) => {
+  var x = localStorage.getItem("lat") - lat;
+  var y = localStorage.getItem("long") - long;
+
+  return Math.round(Math.sqrt(x * x + y * y));
 };

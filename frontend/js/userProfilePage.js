@@ -2,9 +2,9 @@ const userProfilePage = (user) => {
   return `
   <div class='user-profile-page'>
       <div class='user-profile-picture'>
-        <img src='${
-          friendoo.assetsURL + (user.profile_img || "/default.png")
-        }' alt=''/>
+      <img src='${
+        friendoo.assetsURL + `/${user.picture_url || "default.png"}`
+      }' alt=""/>
       </div>
       <div class='user-profile-info'>
         <div class='card-title'>
@@ -12,7 +12,7 @@ const userProfilePage = (user) => {
         </div>
         <div>
           <span class='secondary-color'>Age:</span>
-          ${user.age}years
+          ${getAge(user.birthdate)}years
         </div>
         <div>
           <span class='secondary-color'>Status: </span>
