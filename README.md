@@ -50,11 +50,11 @@ You are asked to implement a dating website using Vanilla HTML, CSS, JS, and Lar
 
 #### Stage 3: Creating List of API's needed for the project
 
-![](./src/API's.png?style=center)
+![](./src/apis.png?style=center)
 
 ---
 
-#### Stage 4: Creating main branch, and master bransh for the project
+#### Stage 4: Creating main branch, and master branch for the project
 
 repo link : https://github.com/abdallahmoubarak/friendoo-dating-app
 
@@ -71,14 +71,58 @@ repo link : https://github.com/abdallahmoubarak/friendoo-dating-app
 - Substage 3 : listing APIs
 - Substage 4 : fitting API's in frontend
 
-###### repo graph
-
 ---
 
-#### Stage 5: Project flow mini report
+#### Stage 5: Presenting the project
 
-![](./src/project-flow-minireport.png?style=center)
+<table>
+  <tr>
+    <th><h4>Sign up process</h4></th>
+    <th><h4>Adding user to favorite</h4></th>
+  </tr>
+  <tr>
+    <td><img src="./src/signup.gif" /></td>
+    <td><img src="./src/adding_user_to_favorite.gif" /></td>
+  </tr>
+</table>
 
----
+<table>
+  <tr>
+    <th><h4>Chating</h4></th>
+    <th><h4>changing interested in</h4></th>
+  </tr>
+  <tr>
+    <td>
+        <img src='./src/chating_with_a_user.gif' >
+    </td>
+    <td>
+        <img src='./src/changing_interest.gif' >
+    </td>
+  </tr>
+</table>
 
-#### Stage 6: Presenting the project
+<table>
+  <tr>
+    <th><h4>Editing profile</h4></th>
+    <th><h4>Viewing others profile</h4></th>
+  </tr>
+  <tr>
+    <td>
+        <img src='./src/editing_profile.gif' >
+    </td>
+    <td>
+        <img src='./src/viewing_user_profile.gif' >
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th><h4>Sign in</h4></th>
+    <th><h4>Logout</h4></th>
+  </tr>
+  <tr>
+    <td><img src="./src/signin.gif" /></td>
+    <td><img src="./src/logout.gif" /></td>
+  </tr>
+</table>
