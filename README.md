@@ -1,8 +1,21 @@
 # Friendoo a dating application
 
-⭐ Laravel, MySQL, and vanilla JavaScript application
+⭐ Implement a dating app using Laravel, MySQL, and vanilla JavaScript.
 
-You are asked to implement a dating website using Vanilla HTML, CSS, JS, and Laravel.
+##### Stack:
+
+<p align='left'>
+<img src='./src/html.svg' width='50' alt=''>
+<img src='./src/css.svg' width='50' alt=''>
+<img src='./src/javascript.svg' height='50' alt=''>
+<img src='./src/laravel.svg' height='55' alt=''>
+<img src='./src/mysql.svg' height='50' alt=''>
+</p>
+
+
+---
+
+#### 🎯 Requirements
 
 - On Signup, users choose their gender and which gender they are interested in. They also specify their location (Bonus: Get programarically the location of the user)
 - Users can only surf people who are interested in.
@@ -58,13 +71,6 @@ You are asked to implement a dating website using Vanilla HTML, CSS, JS, and Lar
 
 repo link : https://github.com/abdallahmoubarak/friendoo-dating-app
 
-<p align='center'>
-<img src='./src/html.svg' width='50' alt=''>
-<img src='./src/css.svg' width='50' alt=''>
-<img src='./src/javascript.svg' height='50' alt=''>
-<img src='./src/laravel.svg' height='55' alt=''>
-<img src='./src/mysql.svg' height='50' alt=''>
-</p>
 
 - Substage 1 : developing frontend pages using (html - css- js)
 - Substage 2 : implementing Laravel
